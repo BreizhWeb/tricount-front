@@ -14,7 +14,7 @@
         <p>Mot de passe</p>
         <input type="text" v-model="mdp" placeholder="Mot de passe" />
         <div v-if="errors.mdp" class="error">{{ errors.mdp }}</div>
-        <button v-on:click="Register" v-on:focus="clearError">S'inscrire</button>
+        <button type="submit" v-on:click="Register" v-on:focus="clearError">S'inscrire</button>
     </div>
     <div>
         <router-link to="/">
@@ -57,6 +57,7 @@ export default {
 
             if (response.status === 200) {
                 alert("Vous êtes enregistré.");
+                this.$router.push('/');
             }
             } catch (error) {
                 if (error.response && error.response.status === 409) {
