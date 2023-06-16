@@ -1,24 +1,17 @@
-# tricount-front
+### Étapes d'installation
+Maintenant on va venir lancer la partie front dans un autre terminal
 
-## Project setup
+1. Ouvrir un terminal :
+```shell
+cd tricount-front
 ```
+
+2. Installez les dépendances nécessaires :
+```shell
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
+3. Lancer le front :
+```shell
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
