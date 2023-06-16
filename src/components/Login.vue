@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="center">
       <h1>Connexion</h1>
       <div class="login">
         <input type="text" v-model="email" placeholder="Email" />
@@ -69,6 +69,12 @@
   };
 </script>
 <style>
+.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .logo {
     width:100px
 }
