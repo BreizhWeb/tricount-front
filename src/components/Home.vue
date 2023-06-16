@@ -158,9 +158,6 @@ export default {
                 })
                 })
                 .then(response => response.json())
-                .then(data => {
-                    // Effectuer des actions supplémentaires après l'ajout de la participation si nécessaire
-                })
                 .catch(error => {
                     console.error('Erreur lors de l\'ajout de la participation:', error);
                 });
