@@ -1,4 +1,5 @@
 <template>
+    <!-- Formulaire de connexion -->
     <div class="center">
       <h1>Connexion</h1>
       <div class="login">
@@ -7,6 +8,7 @@
         <button @click="login">Se connecter</button>
       </div>
       <div>
+        <!-- Lien vers la page d'inscription -->
         <router-link to="/register">
           <button class="link">S'inscrire</button>
         </router-link>

@@ -1,9 +1,11 @@
 <template>
-<router-view />
+  <!-- Afficher les différentes routes -->
+  <router-view />
 </template>
 
 <script>
 export default {
+  // Définition du nom du composant
   name: 'App',
 }
 </script>

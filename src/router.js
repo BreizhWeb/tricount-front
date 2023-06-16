@@ -1,8 +1,11 @@
 import LoginView from './components/Login.vue'
 import RegisterView from './components/Register.vue'
 import HomeView from './components/Home.vue'
+
+// Importation des fonctions de création de route de Vue Router
 import { createRouter, createWebHistory } from 'vue-router'
 
+// Définition des routes de l'application
 const routes=[
     {
         name:'Login',
@@ -21,6 +24,7 @@ const routes=[
     },
 ]
 
+// Création de l'objet router
 const router = createRouter({
     history: createWebHistory(),
     routes

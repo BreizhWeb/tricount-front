@@ -1,4 +1,5 @@
 <template>
+    <!-- Formulaire d'inscription -->
     <h1>Inscription</h1>
     <div class="register">
         <p>Nom</p>
@@ -17,12 +18,14 @@
         <button type="submit" v-on:click="Register" v-on:focus="clearError">S'inscrire</button>
     </div>
     <div>
+        <!-- Lien vers la page de connexion -->
         <router-link to="/">
             <button class="link">Vous avez déjà un compte</button>
         </router-link>
     </div>
 </template>
 <script>
+// Importation du module Axios pour effectuer des requêtes HTTP
 import axios from 'axios'
 
 export default {
@@ -46,8 +49,9 @@ export default {
   methods:{
     async Register() {
         if (this.validateForm()) {
-            // Continuer le processus d'inscription si le formulaire est valide
+            // Validation du formulaire avant de poursuivre le processus d'inscription
             try {
+            // Requête POST pour créer un nouvel utilisateur                
             const response = await axios.post("http://localhost:3000/user", {
                 nom: this.nom,
                 prenom: this.prenom,
@@ -56,10 +60,12 @@ export default {
             });
 
             if (response.status === 200) {
+                // Affichage d'une alerte et redirection vers la page de connexion si l'inscription est réussie
                 alert("Vous êtes enregistré.");
                 this.$router.push('/');
             }
             } catch (error) {
+                // Gestion des erreurs de la requête d'inscription
                 if (error.response && error.response.status === 409) {
                     this.registrationError = "L'adresse e-mail est déjà utilisée.";
                 } else {
@@ -70,6 +76,7 @@ export default {
         }
     },
     validateForm() {
+        // Validation des champs du formulaire
         this.errors = {
         nom: "",
         prenom: "",
@@ -105,6 +112,7 @@ export default {
         return isValid;
     },
     clearError() {
+        // Efface l'erreur d'inscription
         this.registrationError = "";
     },
   }
